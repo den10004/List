@@ -15,18 +15,18 @@ function App() {
   };
 
   const addTodo = async (obj) => {
-    await axios.post(`${API}/addtodo`, obj);
+    await axios.post(`${process.env.API}/addtodo`, obj);
     fetchData();
     setText("");
   };
 
   const updateTodo = async (id, updateData) => {
-    await axios.patch(`${API}/${id}`, updateData);
+    await axios.patch(`${process.env.API}/${id}`, updateData);
     fetchData();
   };
 
   const deleteTodo = async (id) => {
-    await axios.delete(`${API}/${id}`);
+    await axios.delete(`${process.env.API}/${id}`);
     fetchData();
   };
 
