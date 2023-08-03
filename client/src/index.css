@@ -1,0 +1,138 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.mbInput {
+  margin: 0 10px 10px 0;
+}
+
+input {
+  width: 50%;
+  height: 15px;
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media screen and (max-width: 425px) {
+  input {
+    width: 90%;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .mbInput {
+    margin: 0 0px 10px 0;
+  }
+  .bci {
+    margin: 0 auto;
+  }
+}
+
+button {
+  color: white;
+  width: 100px;
+  height: 30px;
+  text-decoration: none;
+  outline: none;
+  border-width: 2px 0;
+  border-style: solid none;
+  border-radius: 6px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #cccccc;
+  color: #cccccc;
+  cursor: default;
+}
+
+.bci {
+  background: linear-gradient(#f3ae0f, #e38916) #e38916;
+  border-color: #fdbe33 #000 #d77206;
+}
+
+.bci:hover {
+  background: linear-gradient(#f5ae00, #f59500) #f5ae00;
+}
+
+.bcr {
+  background: rgb(212, 75, 56);
+  border-color: rgb(212, 75, 56);
+}
+
+.bcr:hover {
+  background: rgb(232, 95, 76);
+}
+
+p {
+  margin: 0;
+  cursor: pointer;
+}
+
+p:hover {
+  margin: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.completed {
+  color: black;
+  text-decoration: line-through;
+}
+
+.not {
+  color: black;
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 20px auto 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid #bdbdbd;
+  padding: 5px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card__wrapper {
+  width: 90%;
+}
+
+li {
+  color: black;
+  list-style-type: none;
+}
