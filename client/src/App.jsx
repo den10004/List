@@ -54,10 +54,13 @@ function App() {
   return (
     <div className="App">
       <TodoInput addTodo={addTodo} text={text} setText={setText} />
+      {todos.length === 0 ? <></> : <p>Количество задач: {todos.length}</p>}
 
       <ul>
-        {todos.length === 0 && !error ? (
-          <li>Загрузка....</li>
+        {todos.length === 0 ? (
+          <li>Нет задач</li>
+        ) : error ? (
+          <>ошибка</>
         ) : (
           <Card todos={todos} updateTodo={updateTodo} deleteTodo={deleteTodo} />
         )}
