@@ -15,7 +15,7 @@ function Card({ todos, updateTodo, deleteTodo }) {
             </p>
           </div>
           <button className="bcr" onClick={() => deleteTodo(_id)}>
-            delete
+          Удалить
           </button>
         </li>
       ))}
