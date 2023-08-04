@@ -132,6 +132,10 @@ p:hover {
   width: 90%;
 }
 
+ul {
+  padding: 0;
+}
+
 li {
   color: black;
   list-style-type: none;
