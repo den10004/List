@@ -8,41 +8,60 @@ import Card from "./components/Card";
 function App() {
   const [todos, setTodos] = useState([]);
   const [text, setText] = useState("");
+  const [error, setError] = useState(null);
 
   const fetchData = async () => {
-    let fetchData = await axios(`${API}`);
-    setTodos(fetchData.data);
+    try {
+      let fetchData = await axios(`${API}`);
+      setTodos(fetchData.data);
+    } catch (err) {
+      console.log(setError(err.message));
+    }
   };
 
   const addTodo = async (obj) => {
-    await axios.post(`${API}/addtodo`, obj);
-    fetchData();
-    setText("");
+    try {
+      await axios.post(`${API}/addtodo`, obj);
+      fetchData();
+      setText("");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const updateTodo = async (id, updateData) => {
-    await axios.patch(`${API}/${id}`, updateData);
-    fetchData();
+    try {
+      await axios.patch(`${API}/${id}`, updateData);
+      fetchData();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const deleteTodo = async (id) => {
-    await axios.delete(`${API}/${id}`);
-    fetchData();
+    try {
+      await axios.delete(`${API}/${id}`);
+      fetchData();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
-    const getTodos = async () => {
-      fetchData();
-    };
-    getTodos();
+    fetchData();
   }, []);
 
   return (
     <div className="App">
       <TodoInput addTodo={addTodo} text={text} setText={setText} />
-      <Card todos={todos} updateTodo={updateTodo} deleteTodo={deleteTodo} />
 
-      <ul>{todos.length === 0 ? <li>нет задач</li> : null}</ul>
+      <ul>
+        {todos.length === 0 && !error ? (
+          <li>Загрузка....</li>
+        ) : (
+          <Card todos={todos} updateTodo={updateTodo} deleteTodo={deleteTodo} />
+        )}
+      </ul>
     </div>
   );
 }
