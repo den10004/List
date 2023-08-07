@@ -13,6 +13,3 @@
 3. пометка выполненной задачи
 
    ![img](./img.png)
-
-[GitHub](https://github.com/den10004/Todo_MERN).
-[Vercel](https://todo-mern-vmnc.vercel.app/).
